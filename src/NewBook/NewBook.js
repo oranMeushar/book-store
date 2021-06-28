@@ -18,8 +18,7 @@ const NewBook = (props) => {
             setName(props.editItem.name);
             setAuthor(props.editItem.author);
             setPrice(props.editItem.price)
-            setCategory(props.editItem.category);
-
+            setCategory([props.editItem.category]);
             const options = [...selectRef.current.children];
             const index = options.findIndex(opt => {
                 return opt.id === props.editItem.category;
@@ -40,7 +39,6 @@ const NewBook = (props) => {
                 price,
                 category: category.join(', ')
             }
-
             if (props.isEdit) {
                 dispatch(actions.editBook(book, props.editItem.id));
             }
