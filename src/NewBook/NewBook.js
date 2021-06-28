@@ -41,9 +41,6 @@ const NewBook = (props) => {
             props.setIsModal(false);
         }
     }
-
-    console.log(category);
-
     const handleChange = (e) => {
         let categories = Array.from(e.target.selectedOptions, option => option.value);
         setCategory(categories);
